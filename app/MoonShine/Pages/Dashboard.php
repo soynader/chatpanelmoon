@@ -40,9 +40,9 @@ class Dashboard extends Page
             FlexibleRender::make('
                 <h1>🔷 En esta plataforma puedes crear tus propios chatbots autorespondedores para WhatsApp.</h1>
                 <br>
-                <h2>🔷 Estamos trabajando para implementar chatbots inteligentes con IA.</h2>
+                <h2>🤖 Crea tu Chatbot con Inteligencia Artificial.</h2>
                 <br>
-                <h2>☠️ No hemos agregado funciones para envío masivo debido a los cierres de cuentas de WhatsApp☢️ por parte de Meta debido al incumplimiento de las políticas.</h2>
+                <h2>🫨 Crea tu Chatbot con Flujos definidos.</h2>
                 <br>
                 <h2>🔷 Si necesitas funciones adicionales, por favor hágamelo saber para poder implementarlas.</h2>
             </br>

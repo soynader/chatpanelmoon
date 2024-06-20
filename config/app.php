@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'chatpanel'),
+    'name' => env('APP_NAME', 'ChatPanel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://chatpanel.up.railway.app'),
+   // 'url' => env('APP_URL', 'http://localhost'),
+      'url' => env('APP_URL', 'https://chatpanel.up.railway.app'), //para produccion
 
     /*
     |--------------------------------------------------------------------------
