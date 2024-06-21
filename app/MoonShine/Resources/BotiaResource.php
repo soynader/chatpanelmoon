@@ -80,7 +80,7 @@ class BotiaResource extends ModelResource
     {
         return [
             'name' =>  ['required', 'string',],
-            'prompt' => ['required', 'string', 'max:2000'],
+            'prompt' => ['required', 'string', 'max:8000'],
             'chatias_id' => ['required', 'exists:chatias,id'],
         ];
     }
