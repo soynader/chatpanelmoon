@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Prompt extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'prompt_type', 'chatias_id'];
+    protected $fillable = ['prompt_type', 'content', 'chatias_id'];
 
     public function chatias()
     {

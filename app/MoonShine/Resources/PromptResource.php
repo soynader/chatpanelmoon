@@ -39,7 +39,7 @@ class PromptResource extends ModelResource
     }
     public function search(): array 
     {
-        return ['id', 'name', 'prompt_type', 'chatias_id'];
+        return ['id', 'content', 'prompt_type', 'chatias_id'];
     }
 
     /**
@@ -59,11 +59,11 @@ class PromptResource extends ModelResource
         return [
             Block::make([
                 ID::make()->sortable(),
-                Select::make('Tipo_Prompts', 'name')->options([
+                Select::make('Tipo_Prompts', 'prompt_type')->options([
                     'ENTRENAR_BOT' => 'ENTRENAR_BOT',
                     'INFO_NEGOCIO' => 'INFO_NEGOCIO',
                 ])->required(),
-                Textarea::make('Contenido', 'prompt_type')->required(),
+                Textarea::make('Contenido', 'content')->required(),
                 Select::make('Nombre Chat-IA', 'chatias_id')
                 ->options($chatias)
                 ->searchable()
@@ -81,8 +81,8 @@ class PromptResource extends ModelResource
     public function rules(Model $item): array
     {
         return [
-            'name' =>  ['required', 'in:ENTRENAR_BOT,INFO_NEGOCIO'],
-            'prompt_type' => ['required', 'string', 'max:8000'],
+            'prompt_type' =>  ['required', 'in:ENTRENAR_BOT,INFO_NEGOCIO'],
+            'content' => ['required', 'string', 'max:8000'],
             'chatias_id' => ['required', 'exists:chatias,id'],
         ];
     }
