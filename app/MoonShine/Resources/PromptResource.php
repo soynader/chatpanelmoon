@@ -5,24 +5,23 @@ declare(strict_types=1);
 namespace App\MoonShine\Resources;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Botia;
+use App\Models\Prompt;
 use App\Models\Chatia;
-
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Field;
+use MoonShine\Components\MoonShineComponent;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Select;
 use MoonShine\Fields\Textarea;
-use MoonShine\Components\MoonShineComponent;
 
 /**
- * @extends ModelResource<Botia>
+ * @extends ModelResource<Prompt>
  */
-class BotiaResource extends ModelResource
+class PromptResource extends ModelResource
 {
-    protected string $model = Botia::class;
+    protected string $model = Prompt::class;
 
     protected string $title = 'Prompt para los chatbots con IA';
 
@@ -40,7 +39,7 @@ class BotiaResource extends ModelResource
     }
     public function search(): array 
     {
-        return ['id', 'name', 'prompt', 'chatias_id'];
+        return ['id', 'name', 'prompt_type', 'chatias_id'];
     }
 
     /**
@@ -60,9 +59,12 @@ class BotiaResource extends ModelResource
         return [
             Block::make([
                 ID::make()->sortable(),
-                Text::make('Nombre Bot-IA', 'name')->required(),  
-                Textarea::make('Prompt', 'prompt')->required(),
-                Select::make('Chat-IA', 'chatias_id')
+                Select::make('Tipo_Prompts', 'name')->options([
+                    'ENTRENAR_BOT' => 'ENTRENAR_BOT',
+                    'INFO_NEGOCIO' => 'INFO_NEGOCIO',
+                ])->required(),
+                Textarea::make('Contenido', 'prompt_type')->required(),
+                Select::make('Nombre Chat-IA', 'chatias_id')
                 ->options($chatias)
                 ->searchable()
                 ->required(),
@@ -71,7 +73,7 @@ class BotiaResource extends ModelResource
     }
 
     /**
-     * @param Botia $item
+     * @param Prompt $item
      *
      * @return array<string, string[]|string>
      * @see https://laravel.com/docs/validation#available-validation-rules
@@ -79,8 +81,8 @@ class BotiaResource extends ModelResource
     public function rules(Model $item): array
     {
         return [
-            'name' =>  ['required', 'string',],
-            'prompt' => ['required', 'string', 'max:8000'],
+            'name' =>  ['required', 'in:ENTRENAR_BOT,INFO_NEGOCIO'],
+            'prompt_type' => ['required', 'string', 'max:8000'],
             'chatias_id' => ['required', 'exists:chatias,id'],
         ];
     }

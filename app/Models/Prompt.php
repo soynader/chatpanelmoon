@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Botia extends Model
+class Prompt extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'prompt', 'chatias_id'];
+    protected $fillable = ['name', 'prompt_type', 'chatias_id'];
 
     public function chatias()
     {

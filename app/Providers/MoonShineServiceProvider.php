@@ -8,7 +8,7 @@ use App\MoonShine\Resources\ClosesessionResource;
 use App\MoonShine\Resources\FlowResource;
 use App\MoonShine\Resources\WelcomeResource;
 use App\MoonShine\Resources\ChatiaResource;
-use App\MoonShine\Resources\BotiaResource;
+use App\MoonShine\Resources\PromptResource;
 use App\MoonShine\Pages\WebqrPage;
 use App\MoonShine\Pages\WebqrIA;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
@@ -59,7 +59,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuItem::make('Chat con IA', new ChatiaResource())
             ->icon('heroicons.cpu-chip'),
 
-            MenuItem::make('Prompts IA', new BotiaResource())            
+            MenuItem::make('Prompts IA', new PromptResource())            
             ->icon('heroicons.document-text'),
                         
             MenuItem::make('QR con IA', new WebqrIA)

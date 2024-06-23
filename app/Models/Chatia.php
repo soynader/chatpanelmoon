@@ -10,8 +10,8 @@ class Chatia extends Model
     use HasFactory;
     protected $fillable = ['name', 'estado'];
 
-    public function botias()
+    public function prompts()
     {
-        return $this->hasMany(Botia::class, 'id');
+        return $this->hasMany(Prompt::class, 'id');
     }
 }
