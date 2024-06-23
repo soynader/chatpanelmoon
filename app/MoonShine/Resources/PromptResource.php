@@ -62,7 +62,7 @@ class PromptResource extends ModelResource
                 Select::make('Tipo_Prompts', 'prompt_type')->options([
                     'ENTRENAR_BOT' => 'ENTRENAR_BOT',
                     'INFO_NEGOCIO' => 'INFO_NEGOCIO',
-                ])->required(),
+                     ])->required(),
                 Textarea::make('Contenido', 'content')->required(),
                 Select::make('Nombre Chat-IA', 'chatias_id')
                 ->options($chatias)
