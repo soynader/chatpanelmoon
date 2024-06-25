@@ -11,6 +11,7 @@ use App\MoonShine\Resources\ChatiaResource;
 use App\MoonShine\Resources\PromptResource;
 use App\MoonShine\Pages\WebqrPage;
 use App\MoonShine\Pages\WebqrIA;
+use App\MoonShine\Resources\Api_keyResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -62,7 +63,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuItem::make('Prompts IA', new PromptResource())            
             ->icon('heroicons.document-text'),
                         
-            MenuItem::make('Api keY IA', new WebqrIAResource())
+            MenuItem::make('QR con IA', new WebqrIA)
+            ->icon('heroicons.qr-code'),
+
+            MenuItem::make('Api keY IA', new Api_keyResource())
             ->icon('heroicons.key'),
 
             MenuItem::make('Chat con Flujos', new ChatbotResource())
