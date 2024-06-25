@@ -62,8 +62,8 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuItem::make('Prompts IA', new PromptResource())            
             ->icon('heroicons.document-text'),
                         
-            MenuItem::make('QR con IA', new WebqrIA)
-            ->icon('heroicons.qr-code'),
+            MenuItem::make('Api keY IA', new WebqrIAResource())
+            ->icon('heroicons.key'),
 
             MenuItem::make('Chat con Flujos', new ChatbotResource())
             ->icon('heroicons.chat-bubble-oval-left-ellipsis'),
