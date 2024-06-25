@@ -46,7 +46,12 @@ class Dashboard extends Page
                 <br>
                 <h2>🔷 Si necesitas funciones adicionales, por favor hágamelo saber para poder implementarlas.</h2>
             </br>
-            <iframe width="860" height="515" src="https://www.youtube.com/embed/3c_Ri_h0ecY?si=FRzIxIZ3lfLVPEeR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+            </br>
+                    🤖 Para implementa inteligencia artificial en tu chatbot necesitas APIs como ChatGPT para aprovecha sus potentes funciones. Recuerda que el uso de estas APIs implica costos asociados al consumo.💵
+            </br>
+            </br>
+                    🎯 Tu chatbot con flujos funciona sin inteligencia artificial, NO necesita API y NO hay costos asociados.🙂
+             '
             
             ), 
               

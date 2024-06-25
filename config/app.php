@@ -52,8 +52,8 @@ return [
     |
     */
 
-    //'url' => env('APP_URL', 'http://localhost'), //para local
-      'url' => env('APP_URL', 'https://chatpanel.up.railway.app'), //para produccion
+    'url' => env('APP_URL', 'http://localhost'), //para local
+    //  'url' => env('APP_URL', 'https://chatpanel.up.railway.app'), //para produccion
 
     /*
     |--------------------------------------------------------------------------
