@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('flows', function (Blueprint $table) {
             $table->id();
             $table->string('keyword');
-            $table->string('answer');
+            $table->text('answer')->change();
             $table->string('media_path')->nullable();
             $table->string('media_url')->nullable();
             $table->foreignId('chatbots_id')
