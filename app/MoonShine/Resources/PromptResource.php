@@ -15,8 +15,7 @@ use MoonShine\Components\MoonShineComponent;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Select;
 use MoonShine\Fields\Textarea;
-use MoonShine\Fields\Number;
-use MoonShine\Fields\Str;
+use Illuminate\Support\Str;
 
 /**
  * @extends ModelResource<Prompt>
@@ -65,7 +64,10 @@ class PromptResource extends ModelResource
                     'ENTRENAR_BOT' => 'ENTRENAR_BOT',
                     'INFO_NEGOCIO' => 'INFO_NEGOCIO',
                      ])->required(),
-                Textarea::make('Contenido', 'content', static fn() => fake()->realText())->required(),                    
+                // Vista previa del contenido
+                Textarea::make('Contenido', 'content', function ($item) {
+                // Limitar el contenido a los primeros 100 caracteres
+                return Str::limit($item->content, 150); }),                  
                 Select::make('Nombre Chat-IA', 'chatias_id')
                 ->options($chatias)
                 ->searchable()
