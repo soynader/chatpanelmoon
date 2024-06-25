@@ -11,6 +11,7 @@ use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Field;
+use MoonShine\Fields\Text;
 use MoonShine\Components\MoonShineComponent;
 
 /**
