@@ -47,13 +47,13 @@ class Api_keyResource extends ModelResource
     public function fields(): array
     {
         // Obtener las chatbots desde la base de datos
- $api_keyS = Api_key::all()->pluck('service_name', 'api_key', 'id')->toArray();
+ $api_keys = Api_key::all()->pluck('service_name', 'api_key', 'id')->toArray();
 
  // Depuración: Imprimir las categorías para verificar
- if (empty($api_keyS)) {
-     \Log::error('No chatbot found in the database.');
+ if (empty($api_keys)) {
+     \Log::error('No api_keys found in the database.');
  } else {
-     \Log::info('Welcomes found: ', $api_keys);
+     \Log::info('Api_keys found: ', $api_keys);
  }
   
         return [
