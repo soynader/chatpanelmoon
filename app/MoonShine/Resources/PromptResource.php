@@ -86,7 +86,7 @@ class PromptResource extends ModelResource
     {
         return [
             'prompt_type' =>  ['required', 'in:ENTRENAR_BOT,INFO_NEGOCIO'],
-            'content' => ['required', 'text'],
+            'content' => ['required', 'text', 'max:15000'],
             'chatias_id' => ['required', 'exists:chatias,id'],
         ];
     }

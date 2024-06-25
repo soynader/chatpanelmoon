@@ -89,7 +89,7 @@ class FlowResource extends ModelResource
     {
         return [
             'keyword' => ['required', 'string', 'max:255'],
-            'answer' =>  ['required', 'text',],
+            'answer' =>  ['required', 'text', 'max:15000'],
             'media_path' => ['nullable', 'file', 'mimes:jpeg,png,jpg,gif,mp4,avi,mkv,pdf,doc,docx,xlsx', 'max:20480'],
             'chatbots_id' => ['required', 'exists:chatbots,id'],
         ];
