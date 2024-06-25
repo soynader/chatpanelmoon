@@ -17,6 +17,7 @@ use MoonShine\Fields\Text;
 use MoonShine\Fields\Field;
 use MoonShine\Fields\Select;
 use MoonShine\Fields\Textarea;
+use Illuminate\Support\Str;
 use MoonShine\Components\MoonShineComponent;
 
 
