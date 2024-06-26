@@ -60,9 +60,8 @@ class Api_keyResource extends ModelResource
             Block::make([
                 ID::make()->sortable(),
                 Text::make('Servicio Api', 'service_name')
-                ->default('api_key_ia') 
-                ->required()
-                ->disabled(),
+                ->default('api_key_ia')
+                ->readonly(),
                 Text::make('Api key de tu servico de IA', 'api_key')->required(),
             ]),
         ];
