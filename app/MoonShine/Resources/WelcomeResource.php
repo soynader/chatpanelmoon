@@ -81,8 +81,8 @@ class WelcomeResource extends ModelResource
     public function rules(Model $item): array
     {
         return [
-            'welcomereply' => ['required', 'string', 'max:255'],
-            'defaultreply' => ['required', 'string', 'max:255'],
+            'welcomereply' => ['required', 'string', 'max:15000'],
+            'defaultreply' => ['required', 'string', 'max:15000'],
             'session_duration' => ['integer', 'max:99'],
         ];
     }
