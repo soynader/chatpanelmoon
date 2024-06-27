@@ -14,59 +14,31 @@ use MoonShine\Fields\Date;
 use MoonShine\Fields\Email;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Image;
-use MoonShine\Components\Badge;
 use MoonShine\Fields\Password;
 use MoonShine\Fields\PasswordRepeat;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Text;
 use MoonShine\Models\MoonshineUser;
 use MoonShine\Models\MoonshineUserRole;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\Builder;
 
 #[Icon('heroicons.outline.users')]
 class MoonShineUserResource extends ModelResource
 {
-public function query(): Builder
-    {
-        return MoonShineUser::query()->where('id', Auth::id());
-    }
     public string $model = MoonshineUser::class;
 
     public string $column = 'name';
 
     public array $with = ['moonshineUserRole'];
-    
-    protected bool $editInModal = true;
 
     public function title(): string
-
     {
-        return __('moonshine::ui.resource.users_title');
-        
+        return __('moonshine::ui.resource.admins_title');
     }
 
-    public function redirectAfterSave(): string
-    {
-        $request = request();
-        $referer = $request->header('referer');
-        return $referer ?: '/';
-    }
-
-    public function getActiveActions(): array 
-    {
-        return ['view', 'update', 'massDelete'];
-    } 
-        
     public function fields(): array
     {
         return [
-
             Block::make([
-              # Badge::make('☠️</br>
-               # <h1>☢️ Por favor, NO crear nuevos usuarios. 📢 Por ahora, el ChatBot funciona únicamente en una cuenta de WhatsApp.</h1>☠️
-                #</br>
-                #<h1>🟢 Si necesita cuentas adicionales, hágamelo saber.⚒️</h1>', 'red'),
                 Tabs::make([
                     Tab::make(__('moonshine::ui.resource.main_information'), [
                         ID::make()
@@ -122,7 +94,7 @@ public function query(): Builder
             ]),
         ];
     }
-   
+
     /**
      * @return array{name: string, moonshine_user_role_id: string, email: mixed[], password: string}
      */
@@ -151,5 +123,4 @@ public function query(): Builder
             'name',
         ];
     }
-    
 }
