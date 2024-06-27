@@ -99,6 +99,13 @@ return [
         ],
     ],
 
+        'redirects' => [
+            'login' => 'admin/resource/moon-shine-user-resource/form-page',
+            'logout' => '/',
+            'register' => 'login',
+    ],
+
+
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout
