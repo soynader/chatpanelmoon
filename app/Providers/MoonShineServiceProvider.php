@@ -66,7 +66,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuItem::make('QR con IA', new WebqrIA)
             ->icon('heroicons.qr-code'),
 
-            MenuItem::make('Api keY IA', new Api_keyResource())
+            MenuItem::make('Api key IA', new Api_keyResource())
             ->icon('heroicons.key'),
 
             MenuItem::make('Chat con Flujos', new ChatbotResource())
