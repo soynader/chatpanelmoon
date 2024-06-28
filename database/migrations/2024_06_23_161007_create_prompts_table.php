@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prompts', function (Blueprint $table) {
             $table->id();
             $table->string('prompt_type');
-            $table->text('content')->change();
+            $table->text('content');
             $table->foreignId('chatias_id')
             ->constrained('chatias')
             ->cascadeOnUpdate()

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('welcomes', function (Blueprint $table) {
             $table->id();
-            $table->string('welcomereply');
-            $table->string('defaultreply');
+            $table->text('welcomereply');
+            $table->text('defaultreply');
             $table->integer('session_duration');
             $table->timestamps();
         });
