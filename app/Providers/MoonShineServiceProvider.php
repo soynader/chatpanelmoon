@@ -78,7 +78,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuItem::make('Mensaje Bienvenida', new WelcomeResource())
             ->icon('heroicons.hand-raised'),
 
-            MenuItem::make('QR con Flujos', new WebqrPage)
+            MenuItem::make('QR - Flujos', new WebqrPage)
             ->icon('heroicons.qr-code'),
         ];
     }
